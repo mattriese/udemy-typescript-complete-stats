@@ -1,6 +1,5 @@
 import { parseDate } from './utils';
 import { MatchResult } from './MatchResult';
-import { MatchData } from './MatchData';
 /**
  * strategy: you start with a csv file and you know it's of matches, so you need a
  * general class to read the csv file, and a more specific class to parse the data
@@ -9,6 +8,7 @@ import { MatchData } from './MatchData';
  * With this strategy, the csvReader and MatchReader are loosely coupled, and
  * an instance of the CsvFileReader is passed to the MatchReader for it to use.
  */
+type MatchData = [Date, string, string, number, number, MatchResult, string];
 
 export interface DataReader {
   read(): void;
